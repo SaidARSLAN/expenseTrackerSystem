@@ -1,8 +1,12 @@
 import React from 'react'
+import { expenseType } from '../context/MainContext'
 
-const Expense = () => {
+
+
+const Expense = ({expense,id}:expenseType) => {
+
   return (
-    <div>Expense</div>
+    <div>{expense} {id}</div>
   )
 }
 

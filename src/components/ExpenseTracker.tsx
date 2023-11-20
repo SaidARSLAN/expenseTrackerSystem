@@ -3,8 +3,16 @@ import GlobalContext from '../context/MainContext'
 import ExpenseList from './ExpenseList'
 
 const ExpenseTracker = () => {
-    const {income} = useContext(GlobalContext) ||{income : 0}
+    const {income,getExpense} = useContext(GlobalContext) ||{income : 0,getExpense : (data) => {}}
     const [value, setValue] = useState("")
+
+    const handeClick = () => {
+
+        getExpense(value)
+        setValue("")
+
+    }
+
   return (
     <div>
         <div>
@@ -14,7 +22,7 @@ const ExpenseTracker = () => {
         <ExpenseList />
         <div>
         <input type="text" value={value} onChange={e => setValue(e.target.value)}/>
-        <button>Add</button>
+        <button onClick={handeClick}>Add</button>
         </div>
     </div>
   )
