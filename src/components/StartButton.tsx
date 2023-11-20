@@ -12,7 +12,7 @@ const StartButton = () => {
     }
  
     return (
-        <button onClick={startExpense}>Start</button>
+        <button onClick={startExpense} className='start-button'>Start</button>
     )
 }
 

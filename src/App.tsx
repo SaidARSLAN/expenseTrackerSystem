@@ -12,7 +12,7 @@ type stepType = {
 function App() {
   const {step} = useContext(GlobalContext) || {step : 0}
   return (
-   <div>
+   <div className='App'>
       {step === 0 ? <StartButton /> :  step === 1 ? <StartExpense /> : <ExpenseTracker />}
    </div>
   )

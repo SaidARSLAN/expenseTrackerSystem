@@ -6,12 +6,14 @@ export type contextProps = {
     sendStart : () => void,
     StartExpenseTracker : (data:string) => void,
     income : number,
-    getExpense : (data:string) => void
+    getExpense : (data:string,cost:number) => void
     expenses : expenseType[]
+    completeDelete : (id:number) => void
 }
-type expenseType = {
+export type expenseType = {
     id: number,
-    expense : string
+    expense : string,
+    cost : number
 }
 const GlobalContext = createContext<contextProps | undefined>(undefined)
 
@@ -31,14 +33,20 @@ export const Provider:React.FC<childrenProps> = ({children}) => {
         setIncome(parseInt(data))
         setStep((currStep) => currStep + 1)
     }
-    const getExpense = (data:string) => {
+    const getExpense = (data:string,cost:number) => {
         setExpenses([...expenses,{
             id:expenses.length + 1,
-            expense : data
+            expense : data,
+            cost : cost
         }])
     }
+    const completeDelete = (id:number) => {
+
+        setExpenses(expenses.filter((expense) => expense.id !== id))
+
+    }
     return (
-        <GlobalContext.Provider value={{step,sendStart,StartExpenseTracker,income,getExpense,expenses}}>
+        <GlobalContext.Provider value={{step,sendStart,StartExpenseTracker,income,getExpense,expenses,completeDelete}}>
             {children}
         </GlobalContext.Provider>
     )

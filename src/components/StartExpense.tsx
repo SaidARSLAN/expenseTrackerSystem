@@ -13,8 +13,8 @@ const StartExpense = () => {
 
   return (
     <div>
-        <input type="text" value={value} onChange={e => setValue(e.target.value)}/>
-        <button onClick={handeClick}>Next</button>
+        <input type="number" value={value} onChange={e => setValue(e.target.value)} className='expense-input'/>
+        <button onClick={handeClick} className='expense-button'>Next</button>
     </div>
   )
 }

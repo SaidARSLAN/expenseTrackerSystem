@@ -1,27 +1,37 @@
 import React, { useContext, useState } from 'react'
-import GlobalContext from '../context/MainContext'
+import GlobalContext, { expenseType } from '../context/MainContext'
 import ExpenseList from './ExpenseList'
 
-const ExpenseTracker = () => {
-    const {income,getExpense} = useContext(GlobalContext) ||{income : 0,getExpense : (data) => {}}
-    const [value, setValue] = useState("")
+type currType = {
 
+    cost : number
+
+}
+
+
+const ExpenseTracker = () => {
+    const {income,getExpense,expenses} = useContext(GlobalContext) ||{income : 0,getExpense : (data,cost) => {},expenses:[] as expenseType[]}
+    const [value, setValue] = useState("")
+    const [cost, setCost] = useState<number>(0)
     const handeClick = () => {
 
-        getExpense(value)
+        getExpense(value,cost)
         setValue("")
-
+        setCost(0)
     }
 
   return (
     <div>
         <div>
             <p>{income}</p>
-            <p>expense</p>
+            <p> {expenses.reduce((total:number, curr:currType) => {
+    return total + (curr.cost || 0);
+  }, 0)}</p>
         </div>
         <ExpenseList />
         <div>
         <input type="text" value={value} onChange={e => setValue(e.target.value)}/>
+        <input type="number" value={cost} onChange={e => setCost(parseInt(e.target.value))}/>
         <button onClick={handeClick}>Add</button>
         </div>
     </div>

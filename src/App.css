@@ -1,0 +1,62 @@
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html,#root,.App {
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+}
+
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.start-button {
+    
+    border: none;
+    background-color: rgb(95, 95, 151);
+    color: white;
+    padding: 2rem 3rem;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1000;
+    text-transform: uppercase;
+
+}
+.start-button:hover {
+    background-color: rgb(47, 47, 78);
+}
+.expense-input {
+    width: 200px;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid blue;
+    margin-right: 2rem;
+}
+.expense-button {
+
+    border: none;
+    padding: 1rem 2.2rem;
+    background-color: rgb(95, 95, 151);
+    color: white;
+    border-radius: 1rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1000;
+    
+}
+.expense-button:hover {
+    background-color: rgb(47, 47, 78);
+}
