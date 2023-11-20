@@ -15,21 +15,24 @@ const ExpenseTracker = () => {
     const [cost, setCost] = useState<number>(0)
     const handeClick = () => {
 
-        getExpense(value,cost)
-        setValue("")
-        setCost(0)
-    }
+    getExpense(value,cost)
+                    setValue("")
+                setCost(0)
 
+    }
+    
   return (
     <div>
-        <div>
-            <p>{income}</p>
-            <p> {expenses.reduce((total:number, curr:currType) => {
+        <div className='income-table'>
+            <p className='green'>{income - expenses.reduce((total:number, curr:currType) => {
     return total + (curr.cost || 0);
-  }, 0)}</p>
+  }, 0)}$</p>
+            <p className='red'> {expenses.reduce((total:number, curr:currType) => {
+    return total + (curr.cost || 0);
+  }, 0)} $</p>
         </div>
         <ExpenseList />
-        <div>
+        <div className='transaction-inputs'>
         <input type="text" value={value} onChange={e => setValue(e.target.value)}/>
         <input type="number" value={cost} onChange={e => setCost(parseInt(e.target.value))}/>
         <button onClick={handeClick}>Add</button>

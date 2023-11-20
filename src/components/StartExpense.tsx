@@ -13,7 +13,7 @@ const StartExpense = () => {
 
   return (
     <div>
-        <input type="number" value={value} onChange={e => setValue(e.target.value)} className='expense-input'/>
+        <input type="number" value={value} onChange={e => setValue(e.target.value)} className='expense-input' placeholder='Your income... $'/>
         <button onClick={handeClick} className='expense-button'>Next</button>
     </div>
   )

@@ -12,8 +12,9 @@ const Expense = ({expense,id,cost}:expenseType) => {
         completeDelete(id)
 
     }
+
   return (
-    <div>
+    <div className='transaction'>
         <p>{expense} {cost}</p>
         <button onClick={handleClick}>X</button>
     </div>

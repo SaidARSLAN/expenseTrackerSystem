@@ -55,8 +55,87 @@ body,html,#root,.App {
     text-transform: uppercase;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 1000;
-    
+
 }
 .expense-button:hover {
     background-color: rgb(47, 47, 78);
+}
+
+.transaction-inputs {
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+.transaction-inputs input {
+
+    width: 200px;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid rgb(238, 0, 255);
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+
+}
+.transaction-inputs button {
+    border: none;
+    padding: 1rem 2.2rem;
+    background-color: rgb(139, 65, 139);
+    color: white;
+    border-radius: 1rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1000;
+    width: 200px;
+}
+.transaction-inputs button:hover {
+    background-color: rgb(238, 0, 255);
+}
+
+.transaction {
+
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    align-items: center;
+}
+.transaction p {
+
+    font-size: 1.7rem;
+
+}
+.transaction button {
+
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 1000;
+    color: rgb(116, 34, 34);
+    transition: color 0.4s ease;
+}  
+.transaction button:hover {
+
+    color: red;
+
+}
+.income-table {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.income-table p {
+    font-size: 1.7rem;
+}
+.green {
+    color: rgb(59, 219, 59);
+}
+.red {
+    color: red;
 }
